@@ -457,7 +457,8 @@
       "addFirst": "إضافة أول إيراد"
     },
     "messages":{
-      "createSuccess":"تم إنشاء المصروف بنجاح"
+      "createSuccess":"تم إنشاء المصروف بنجاح",
+      "fetchError":"فشل في جلب الإيرادات"
     }
     
   },
