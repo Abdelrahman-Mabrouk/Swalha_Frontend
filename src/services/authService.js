@@ -1,12 +1,9 @@
 import axios from 'axios'
 
 const getApiBaseUrl = () => {
-    // يأخذ الـ IP من الـ URL الحالي ويغير الـ port للـ backend
-    const hostname = window.location.hostname;
-    const protocol = window.location.protocol;
-    
-    return `${protocol}//${hostname}:8080/api`;
-};
+    // أثناء النشر على Railway
+    return "https://swalhabackend-production.up.railway.app/api";
+  };
 
 const API_BASE_URL = getApiBaseUrl();
 const authService = {
