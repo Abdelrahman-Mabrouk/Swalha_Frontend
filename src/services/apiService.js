@@ -1,14 +1,9 @@
 import axios from 'axios'
 
 const getApiBaseUrl = () => {
-  if (window.location.hostname === "localhost") {
-    // أثناء التطوير محلي
-    return "http://localhost:8080/api";
-  } else {
     // أثناء النشر على Railway
     return "https://swalhabackend-production.up.railway.app/api";
-  }
-};
+  };
 
 const API_BASE_URL = getApiBaseUrl();
 
