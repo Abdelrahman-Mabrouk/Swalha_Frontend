@@ -1,19 +1,23 @@
 import axios from 'axios'
 
 const getApiBaseUrl = () => {
-    // يأخذ الـ IP من الـ URL الحالي ويغير الـ port للـ backend
-    const hostname = window.location.hostname;
-    const protocol = window.location.protocol;
-    
-    return `${protocol}//${hostname}:8080/api`;
+  if (window.location.hostname === "localhost") {
+    // أثناء التطوير محلي
+    return "http://localhost:8080/api";
+  } else {
+    // أثناء النشر على Railway
+    return "https://swalhabackend-production.up.railway.app/api";
+  }
 };
 
 const API_BASE_URL = getApiBaseUrl();
+
 // Create axios instance with default config
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
-})
+});
+
 
 // Request interceptor to add auth token
 apiClient.interceptors.request.use(
